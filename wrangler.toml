@@ -1,0 +1,6 @@
+name = "8streamapi"
+main = "index.ts"
+type = "webpack"
+compatibility_flags = []
+workers_dev = true
+compatibility_date = "2025-07-12"

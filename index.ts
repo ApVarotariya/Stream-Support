@@ -18,7 +18,7 @@ app.use(express.json());
 
 const limiter = rateLimit({
   windowMs: 5 * 60 * 1000, // 15 minutes
-  max: 10, // 100 requests per window
+  max: 100, // 100 requests per window
   message: "Too many requests, please try again later.",
 });
 if (process.env.RATE_LIMIT === "true") {
@@ -26,7 +26,7 @@ if (process.env.RATE_LIMIT === "true") {
 }
 app.use("/api/v1", router);
 app.get("/", (req, res) => {
-  res.send("its ok");
+  res.send("its ok(ts)");
 });
 
 const Port = process.env.PORT || 5001;

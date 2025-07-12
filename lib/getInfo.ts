@@ -4,7 +4,7 @@ import { getPlayerUrl } from "./getPlayerUrl";
 export default async function getInfo(id: string) {
   try {
     const playerUrl = await getPlayerUrl();
-    console.log(`Player URL: ${playerUrl}`);
+    // console.log(`Player URL: ${playerUrl}`);
     const response = await axios.get(`${playerUrl}/play/${id}`, {
       headers: {
         Accept:
@@ -28,7 +28,7 @@ export default async function getInfo(id: string) {
       },
     });
     const $ = cheerio.load(response.data);
-    console.log(cheerio, $);
+    // console.log(cheerio, $);
     // get last script tag
     const script = $("script").last().html()!;
     if (!script) {
